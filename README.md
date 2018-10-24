@@ -12,8 +12,6 @@ Use HTML5, CSS3, Sass, jQuery, JavaScript, React to create responsive app
 
 ## Requirements
 
-<em>Please read through ALL the requirements before starting your project</em>
-
 <strong>Below are the design requirements:</strong>
 
   1. Full width slider with 3 images
@@ -46,11 +44,20 @@ As for the technology that you should use its up to you.
   2. Front end framework
   3. Animations
   4. Dynamic backend from a CMS
+
 ### *Please also submit a small write up discussing (leave answers to a sentence or two):*
 
   1. What you technologies you used and why (if you only used html, css, and js please explain any templates or frameworks you may have used i.e. bootstrap)
+
+I incorporated React.js because I like the modular nature of it. It is easy to maintain and update. For example, each component gets its own css style sheet for ease of maintenance.
+
   2. Any struggles you faced when developing with technology you chose
+
+In order to incorporate SASS efficiently I had to modify the webpack.config file. This allowed me to add SCSS Loaders.
+
   3. What you enjoyed the most and why
+
+I enjoyed the process of translating the mockups into reusable code.
 
 ## Code Snippets
 
@@ -59,58 +66,49 @@ As for the technology that you should use its up to you.
 ```
 style.sass
 
-nav
-  position: sticky
-  top: 0
-  left: 0
-  background-color: $white
-  text-align: center
-  padding: 1.250em 17.188em
-  display: flex
-  align-items: center
-  justify-content: space-around
-  z-index: 1
-  @media screen and (max-width: $break-small)
-    display: block
-    width: 100%
-    padding: 10px 0px
-    display: flex
-    flex-direction: column
-    justify-content: space-between
+$blueColor: #1676DD
+$darkBlueColor: #283647
+$orangeColor: #F36819
+$lightOrangeColor: rgb(255, 180, 73)
+$yellowColor: #F7931D
+$overRed: #F36819
+$overDark: #000000
+
+...
+
+.header2
+  font-size: 1.750em
+  color: $orangeColor
+
+.header3
+  font-size: 20px
+  font-size: 1.250em
+  color: $yellowColor
+  letter-spacing: 2px
+
+.lorem
+  font-size: 14px
+  font-size: 0.875em
+  line-height: 1.250em
+
+.lorem159
+  letter-spacing: 2px
+  font-weight: bold
+  font-size: 3.438em
+  color: $darkBlueColor
 
 ```
 #### 2. Semantic HTML5
 
 ```
-Index.html
+Section1.js
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#gallery">Gallery</a>
-  <a href="blog.html">Blog</a>
-  <a href="#">Contact</a>
-</nav>
-<header class="vertically-centered" id="landing-header">
-  <div>
-    <h1><a href="">Monument</a></h1>
-    <h2>A Lifestyle Magazine</h2>
-  </div>
-</header>
+<article className="page-articles">
+  <section className="grid">
+    <div className="page-item">
+      <img src="images/page-icon.svg" alt="page icon" />
+      <p className="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius soluta incidunt, eum quos</p>
 
-<section class="archive">
-
-  <h2>From the archive</h2>
-
-  <div class="flex wrap">
-    <article class="card">
-      <img src="images/article_1.jpg" alt="cactus in southwest photo">
-      <h3>Issue Twenty - The Southwest</h3>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel voluptate eos nisi necessitatibus aperiam dolorem ut eveniet quae dolores quisquam nulla, cumque tenetur blanditiis modi tempora excepturi error veniam suscipit dicta praesentium reiciendis illo obcaecati odit inventore minima. Pariatur facilis, excepturi! Facilis cumque dicta reiciendis nam accusantium cum pariatur sunt accusamus voluptas eaque sapiente totam dolorum nulla eligendi molestiae, quidem odit repellat temporibus quae ipsa aut placeat modi sint doloribus. Ipsum nisi veritatis, facere doloribus. Nihil veritatis corporis eaque odio.</p>
-
-      <button>Read More</button>
-
-    </article>
 ```
 
 
@@ -122,61 +120,45 @@ align-items: center
 justify-content: space-around
 
 ```
-
-#### 4. Media queries for responsive behavior
-
+#### 4. CSS-grid layout
 
 ```
-landing.sass
+Section3Grid.css
 
-.about
-  background-color: $color_humming_bird
-  padding: 7.500em
-  text-align: center
-  @media screen and (max-width: $break-small)
-    padding: 7.500em .5em
-
-```
-
-#### 5. Front end validation for user form
-
-```
-main.js
-
-if (fieldType === 'email') {
-  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  var isValidEmailAddress = re.test($currentField.val());
-  if (!isValidEmailAddress) {
-    $currentField.addClass('error');
-    $currentField.siblings('.error-message').text('Please enter a valid email address.').fadeIn();
-
-    return;
-  }
-
+.grid3 {
+  align-items: center;
+	display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "sub1 img1"
+                       "img2 sub2";
 }
 
 ```
 
-<img src="readme-assets/validation.jpg" alt="Front-end validation" width="250"/>
+#### 5. Media queries for responsive behavior
 
-#### 6. Smooth scrolling across pages
-
-```
-main.js
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
 
 ```
-7. Use HTML5 and CSS Validators
+style.sass
 
-<img src="readme-assets/validation-html.jpg" alt="HTML validation" width="500"/>
+@media only screen and (max-width: 560px)
+  button
+    width: 20%
+    font-size: 0.7em
 
-<img src="readme-assets/validation-css.jpg" alt="CSS validation" width="500"/>
+```
+#### 6. Adding SCSS loaders to Webpack
+
+```
+webpack.config.dev.js
+
+{
+    test: /\.sass$/,
+    loaders: [
+        require.resolve('style-loader'),
+        require.resolve('css-loader'),
+        require.resolve('sass-loader')
+    ]
+},
+
+```
