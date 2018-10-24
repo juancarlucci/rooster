@@ -1,0 +1,29 @@
+.img1 {
+  grid-area: img1;
+}
+
+.img2 {
+  grid-area: img2;
+}
+
+.title-subtitle1 {
+  grid-area: sub1;
+}
+
+.title-subtitle2 {
+  grid-area: sub2;
+}
+
+.grid3 {
+  align-items: center;
+	display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "sub1 img1"
+                       "img2 sub2";
+}
+
+@media screen and (max-width: 600px) {
+  .grid3 {
+    display: flex
+  }
+}

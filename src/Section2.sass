@@ -1,0 +1,51 @@
+@import style
+
+.grid2
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+
+.grid2
+  padding: 3.125em 1.875em 0px 1.875em
+  margin: auto
+  align-items: center
+
+.page-item2
+  flex-basis: 38%
+  margin: 0px 6.250em 0px 1.250em
+
+.gray
+  color: gray
+
+.item
+  width: 23%
+  display: flex
+  flex-direction: column
+  text-align: center
+  align-items: center
+  p
+    width: 160px
+    text-align: center
+    color: $yellowColor
+
+@media (max-width: 800px)
+	.page-item2
+		flex-basis: 100%
+		padding: 1.250em
+    margin: 0px 0px 0px 1.250em
+
+@media (max-width: 560px)
+	.grid2
+		padding: 0.625em 1.875em 0 0.625em
+  .page-item2
+		margin: 0px 0px 0px 1.250em
+  .lorem159
+    font-size: 1.3em
+  .item
+    width: 90%
+
+@media (max-width: 560px)
+  #percents-section
+    padding: 2em 0
+  #gray-ipsum-p
+    margin: 0 0 0 1.250em

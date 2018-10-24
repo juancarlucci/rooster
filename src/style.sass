@@ -1,0 +1,209 @@
+$blueColor: #1676DD
+$darkBlueColor: #283647
+$orangeColor: #F36819
+$lightOrangeColor: rgb(255, 180, 73)
+$yellowColor: #F7931D
+$overRed: #F36819
+$overDark: #000000
+
+
+//Base Styles */
+
+*
+  box-sizing: border-box
+
+
+html
+  font-size: 16px
+
+
+
+/* Responsive images */
+img
+  max-width: 100%
+
+
+/* ----------------------------------------
+//Typography
+//------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4
+  font-weight: 600
+
+
+h1
+  font-size: 2.5rem
+  letter-spacing: 12px
+  letter-spacing: 0.8rem
+
+.loremIpsum
+  font-size: 1.750em
+  font-weight: 300
+  text-transform: uppercase
+
+.Orange
+  font-weight: bold
+  color: $orangeColor
+
+.Balck
+  color: $darkBlueColor
+
+.header2
+  font-size: 1.750em
+  color: $orangeColor
+
+.header3
+  font-size: 20px
+  font-size: 1.250em
+  color: $yellowColor
+  letter-spacing: 2px
+
+.lorem
+  font-size: 14px
+  font-size: 0.875em
+  line-height: 1.250em
+
+.lorem159
+  letter-spacing: 2px
+  font-weight: bold
+  font-size: 3.438em
+  color: $darkBlueColor
+
+/* ----------------------------------------
+//Header
+//------------------------------------------- */
+
+header
+  background-repeat: no-repeat
+  background-size: cover
+
+
+/* //----------------------------------------
+//Buttons
+//------------------------------------------- */
+button
+  color: white
+  background: -moz-linear-gradient(left, $orangeColor 0%, $lightOrangeColor 100%) //* FF3.6-15 */
+  background: -webkit-linear-gradient(left, $orangeColor 0%,$lightOrangeColor 100%) //* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, $orangeColor 0%,$lightOrangeColor 100%) //* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$orangeColor', endColorstr='$lightOrangeColor',GradientType=0 ) //* IE6-9 */
+  width: 215px
+  height: 40px
+  font-size: 1em
+  letter-spacing: 2px
+  border-radius: 5px
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.55)
+  transition: all 0.3s ease-in-out
+
+button:hover
+  background: linear-gradient(to right, $lightOrangeColor 0%,$orangeColor 100%) //* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: white
+  font-weight: 600
+
+@media only screen and (max-width: 560px)
+  button
+    width: 20%
+    font-size: 0.7em
+
+
+
+/* //----------------------------------------
+//Forms/Modals
+//------------------------------------------- */
+form
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  -ms-flex-direction: row
+  flex-direction: row
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  -webkit-box-pack: justify
+  -ms-flex-pack: justify
+  justify-content: space-between
+  color: white
+  font-size: 0.625em
+  white-space: pre-wrap
+
+textarea
+  width: 100%
+  display: block
+
+
+input,
+textarea
+  border: none
+  border-radius: 0.313em
+  margin-bottom: 0.750em
+  margin-bottom: 0.8rem
+  padding: 0.625em 0.625em
+  outline: 0
+
+
+::-webkit-input-placeholder
+  color: #7c878e
+  text-transform: uppercase
+  letter-spacing: 0.75px
+  letter-spacing: 0.05rem
+  font-size: 12.299px
+  font-size: 0.82rem
+  font-weight: 600
+
+
+-moz-placeholder
+  /* Firefox 18- */
+  color: #7c878e
+  text-transform: uppercase
+  letter-spacing: 0.75px
+  letter-spacing: 0.05rem
+  font-size: 12.299px
+  font-size: 0.82rem
+  font-weight: 600
+
+
+::-moz-placeholder
+  /* Firefox 19+ */
+  color: #7c878e
+  text-transform: uppercase
+  letter-spacing: 0.75px
+  letter-spacing: 0.05rem
+  font-size: 12.299px
+  font-size: 0.82rem
+  font-weight: 600
+
+
+-ms-input-placeholder
+  color: #7c878e
+  text-transform: uppercase
+  letter-spacing: 0.75px
+  letter-spacing: 0.05rem
+  font-size: 12.299px
+  font-size: 0.82rem
+  font-weight: 600
+
+.modal-content
+  background-color: none
+  border: none
+
+.col-third
+  width: 32%
+
+.col-half
+  width: 49.2%
+
+.col-full
+  width: 100%
+
+
+@media only screen and (max-width: 774px)
+  .col-third
+    width: 100%
+
+@media only screen and (max-width: 560px)
+  .col-half
+    width: 100%

@@ -1,0 +1,60 @@
+
+.page-articles
+  margin: auto
+
+.grid
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+
+.grid
+  width: 70%
+  margin: auto
+
+.page-item
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-evenly
+  padding: 0.750em
+  flex-basis: 50%
+  img
+    width: 1.875em
+  p
+    width: 20.813em
+    padding: 1.063em 2.313em
+    text-align: left
+    margin-top: 1.250em
+
+@media (max-width: 800px)
+	.page-item
+		flex-basis: 100%
+
+
+@media (max-width: 400px)
+	.page-item
+		margin: 0
+    padding-bottom: 0
+
+.slanted
+  width: 100%
+  position: relative
+
+.slanted-text
+  display: flex
+  position: relative
+  top: -157px
+  width: 65%
+  margin: auto
+  color: white
+  font-weight: 300
+  font-size: 1.688em
+  text-align: center
+
+
+
+@media (max-width: 400px)
+  .slanted-text
+	  font-size: 0.5em
+  .slanted-text
+    top: -5em
